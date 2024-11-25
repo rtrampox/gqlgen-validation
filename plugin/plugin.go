@@ -25,6 +25,8 @@ func (g *generator) InjectSourceEarly() *ast.Source {
 	return &ast.Source{
 		Name:    "validationDirective.graphqls",
 		BuiltIn: false,
-		Input:   `@binding(constraint: String!) on FIELD_DEFINITION | ARGUMENT_DEFINITION`,
+		Input: `
+		directive @binding(constraint: String!) on INPUT_FIELD_DEFINITION | ARGUMENT_DEFINITION
+		`,
 	}
 }
